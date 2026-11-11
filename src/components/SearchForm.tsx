@@ -198,7 +198,6 @@ export const SearchForm: React.FC<SearchFormProps> = ({
       </div>
 
       className="w-full py-2 px-3 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-xl flex items-center justify-between text-amber-300 text-xs transition-colors group"
-        >
           <span className="flex items-center gap-1.5">
             <Sparkles className="w-3.5 h-3.5 text-amber-400" />
             <span>Δοκιμή με υπαρκτή απόφαση (Ειρηνοδικείο Αθηνών &bull; ΓΑΚ 100/2023)</span>
