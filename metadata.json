@@ -1,0 +1,8 @@
+{
+  "name": "Solon Track - Έκδοση Αποφάσεων",
+  "description": "Παρακολούθηση πορείας υποθέσεων και έκδοσης δικαστικών αποφάσεων από το portal ΣΟΛΩΝ (TrackLdoPublic) του Υπουργείου Δικαιοσύνης.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

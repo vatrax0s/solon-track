@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="el">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>Solon Track - Έκδοση Αποφάσεων</title>
+    <meta name="description" content="Παρακολούθηση πορείας υποθέσεων και έκδοσης δικαστικών αποφάσεων από το portal ΣΟΛΩΝ (TrackLdoPublic) του Υπουργείου Δικαιοσύνης." />
+    <meta property="og:title" content="Solon Track - Έκδοση Αποφάσεων" />
+    <meta property="og:description" content="Παρακολούθηση πορείας υποθέσεων και έκδοσης δικαστικών αποφάσεων από το portal ΣΟΛΩΝ (TrackLdoPublic) του Υπουργείου Δικαιοσύνης." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Solon Track" />
+    
+    <!-- Icons & Manifest -->
+    <link rel="icon" type="image/png" sizes="512x512" href="https://fonts.gstatic.com/s/e/notoemoji/latest/2696_fe0f/512.png" />
+    <link rel="icon" type="image/png" sizes="256x256" href="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/Balance%20scale/3D/balance_scale_3d.png" />
+    <link rel="apple-touch-icon" href="https://fonts.gstatic.com/s/e/notoemoji/latest/2696_fe0f/512.png" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <script>
+      // Global force update utility that purges all caches and service workers when manually clicked
+      window.forceReloadLatestVersion = async function() {
+        try {
+          if ('caches' in window) {
+            const keys = await caches.keys();
+            await Promise.all(keys.map(function(k) { return caches.delete(k); }));
+          }
+          if ('serviceWorker' in navigator) {
+            const registrations = await navigator.serviceWorker.getRegistrations();
+            await Promise.all(registrations.map(function(r) { return r.unregister(); }));
+          }
+        } catch (e) {
+          console.warn('Error purging cache:', e);
+        }
+        window.location.href = window.location.origin + '/?updated=' + Date.now();
+      };
+
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js', { scope: '/' }).then(function(reg) {
+            reg.update();
+          }).catch(function(err) {
+            console.warn('SW registration failed:', err);
+          });
+        });
+      }
+    </script>
+  </head>
+  <body class="bg-slate-950 text-slate-100 antialiased selection:bg-blue-500 selection:text-white">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

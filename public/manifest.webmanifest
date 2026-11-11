@@ -1,0 +1,37 @@
+{
+  "id": "/",
+  "name": "Solon Track - Έκδοση Αποφάσεων",
+  "short_name": "SolonTrack",
+  "description": "Παρακολούθηση πορείας υποθέσεων και έκδοσης δικαστικών αποφάσεων από το portal ΣΟΛΩΝ.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#020617",
+  "theme_color": "#0f172a",
+  "lang": "el",
+  "dir": "ltr",
+  "categories": ["legal", "utilities", "productivity"],
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "icons": [
+    {
+      "src": "https://fonts.gstatic.com/s/e/notoemoji/latest/2696_fe0f/512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://fonts.gstatic.com/s/e/notoemoji/latest/2696_fe0f/512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/Balance%20scale/3D/balance_scale_3d.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

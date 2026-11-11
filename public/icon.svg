@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Vibrant blue to indigo gradient matching Header brand -->
+    <linearGradient id="headerBlueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="60%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#4338ca" />
+    </linearGradient>
+    
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#1e1b4b" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <!-- Blue gradient squircle background -->
+  <rect width="512" height="512" rx="120" fill="url(#headerBlueGrad)" />
+  
+  <!-- Subtle top-left highlight sheen -->
+  <rect width="512" height="512" rx="120" fill="url(#glowGrad)" />
+
+  <!-- Centered Lucide Scale Icon in pristine white with safe-zone margin -->
+  <g transform="translate(106, 106) scale(12.5)" filter="url(#softGlow)">
+    <g fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Left pan -->
+      <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" fill="#ffffff" fill-opacity="0.15" />
+      <!-- Right pan -->
+      <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" fill="#ffffff" fill-opacity="0.15" />
+      <!-- Base bar -->
+      <path d="M7 21h10" stroke-width="2.2" />
+      <!-- Center vertical pillar -->
+      <path d="M12 3v18" stroke-width="2.2" />
+      <!-- Top balance crossbar -->
+      <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2" stroke-width="2.2" />
+    </g>
+  </g>
+</svg>
