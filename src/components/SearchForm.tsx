@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { Landmark, Hash, Calendar, Search, Sparkles, ChevronRight, RotateCcw } from 'lucide-react';
+import { Landmark, Hash, Calendar, Search, ChevronRight, RotateCcw } from 'lucide-react';
 import { SolonCourt, SolonQuery } from '../solonService.ts';
 
 interface SearchFormProps {
@@ -17,7 +17,7 @@ interface SearchFormProps {
   onSubmit: (e: React.FormEvent) => void;
   isLoading: boolean;
   loadingStep: string;
-  onLoadExample: (example: { courtValue: string; searchType: 'GAK' | 'EAK'; number: string; year: string }) => void;
+  onLoadExample?: (example: { courtValue: string; searchType: 'GAK' | 'EAK'; number: string; year: string }) => void;
 }
 
 export const SearchForm: React.FC<SearchFormProps> = ({
@@ -30,7 +30,6 @@ export const SearchForm: React.FC<SearchFormProps> = ({
   onSubmit,
   isLoading,
   loadingStep,
-  onLoadExample,
 }) => {
   const currentYear = new Date().getFullYear().toString();
   const recentYears = [currentYear, '2024', '2023', '2022'];
@@ -195,17 +194,6 @@ export const SearchForm: React.FC<SearchFormProps> = ({
             {yr}
           </button>
         ))}
-      </div>
-
-      className="w-full py-2 px-3 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-xl flex items-center justify-between text-amber-300 text-xs transition-colors group"
-          <span className="flex items-center gap-1.5">
-            <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-            <span>Δοκιμή με υπαρκτή απόφαση (Ειρηνοδικείο Αθηνών &bull; ΓΑΚ 100/2023)</span>
-          </span>
-          <span className="text-[11px] font-medium underline underline-offset-2 opacity-90 group-hover:opacity-100">
-            Φόρτωση
-          </span>
-        </button>
       </div>
 
       {/* Submit Button */}
